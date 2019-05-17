@@ -15,6 +15,10 @@ jobs:
             - attr_hasher-{{ checksum "Gemfile.lock" }}
             # - attr_hasher-
 
+      - run:
+          name: Install bundler
+          command: gem install bundler
+
       # Bundle install dependencies
       - run:
           name: Install dependencies
