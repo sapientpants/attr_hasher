@@ -1,0 +1,1 @@
+require 'attr_hasher/version'
