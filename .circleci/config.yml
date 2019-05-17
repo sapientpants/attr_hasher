@@ -1,6 +1,12 @@
 version: 2
 jobs:
   build:
+    parameters:
+      sonar-login:
+        description:
+        type: env_var_name
+        default: SONAR_LOGIN
+
     working_directory: ~/attr_hasher
 
     docker:
@@ -19,6 +25,10 @@ jobs:
           name: Install bundler
           command: gem install bundler
 
+      - run:
+        name: Install sonar-scanner
+        command: curl -s -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-3.3.0.1492-linux.zip -o sonarscanner.zip && unzip -qq sonarscanner.zip && rm -rf sonarscanner.zip && mv sonar-scanner-3.3.0.1492-linux sonar-scanner
+
       # Bundle install dependencies
       - run:
           name: Install dependencies
@@ -33,6 +43,10 @@ jobs:
       - run:
           name: RSpec
           command: bundle exec rspec
+
+      - run:
+          name: SonarQube scan
+          command: sonar-scanner -Dsonar.projectKey=sapientpants_attr_hasher -Dsonar.organization=sapientpants-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=<<parameters.sonar-login>>
 
       # Save artifacts
       # - store_test_results:
