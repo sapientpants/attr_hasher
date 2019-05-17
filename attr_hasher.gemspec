@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/sapientpants/attr_hasher'
   s.license = 'MIT'
 
-  s.has_rdoc = false
   s.rdoc_options = ['--line-numbers', '--inline-source', '--main', 'README.rdoc']
 
   s.require_paths = ['lib']
