@@ -32,8 +32,8 @@ jobs:
 
       - run:
           name: RSpec
-          command: rspec
+          command: bundle exec rspec
 
       # Save artifacts
-      - store_test_results:
-          path: /tmp/test-results
+      # - store_test_results:
+      #     path: /tmp/test-results
