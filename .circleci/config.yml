@@ -2,12 +2,6 @@
 version: 2
 jobs:
   build:
-    parameters:
-      sonar-login:
-        description:
-        type: env_var_name
-        default: SONAR_LOGIN
-
     working_directory: ~/attr_hasher
 
     docker:
@@ -51,7 +45,7 @@ jobs:
 
       - run:
           name: SonarQube scan
-          command: sonar-scanner -Dsonar.projectKey=sapientpants_attr_hasher -Dsonar.organization=sapientpants-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=<<parameters.sonar-login>>
+          command: sonar-scanner -Dsonar.projectKey=sapientpants_attr_hasher -Dsonar.organization=sapientpants-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_LOGIN
 
       # Save artifacts
       # - store_test_results:
