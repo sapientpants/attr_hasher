@@ -8,7 +8,9 @@ rvm:
   # - 2.5.0
   # - 2.6.0
 
-before_install: gem install bundler -v 2.0.1
+before_install:
+  - gem install bundler -v 2.0.1
+  - gem install rubocop
 
 addons:
   sonarcloud:
