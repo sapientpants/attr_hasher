@@ -15,4 +15,5 @@ addons:
     organization: "sapientpants-github"
 
 script:
+  - bundle exec rake
   - sonar-scanner
