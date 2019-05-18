@@ -45,7 +45,7 @@ jobs:
 
       - run:
           name: SonarQube scan
-          command: ./sonar-scanner -Dsonar.projectKey=sapientpants_attr_hasher -Dsonar.organization=sapientpants-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_LOGIN
+          command: ./sonar-scanner/bin/sonar-scanner -Dsonar.projectKey=sapientpants_attr_hasher -Dsonar.organization=sapientpants-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_LOGIN
 
       # Save artifacts
       # - store_test_results:
