@@ -55,6 +55,7 @@ DEPENDENCIES
   attr_hasher!
   rake
   rspec
+  rubocop
   rubocop-performance
   rubocop-rspec
   simplecov
