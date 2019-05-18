@@ -9,7 +9,6 @@ gemspec
 group :test do
   gem 'rake'
   gem 'rspec'
-  gem 'rspec_sonar_formatter', github: 'witjoh/rspec_sonar_formatter'
   gem 'rubocop-performance'
   gem 'rubocop-rspec'
   gem 'simplecov', require: false

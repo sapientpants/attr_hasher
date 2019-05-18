@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/witjoh/rspec_sonar_formatter
-  revision: 11cff39ae5110f056b226a3e00232b31ca9cecd4
-  specs:
-    rspec_sonar_formatter (0.0.0)
-
 PATH
   remote: .
   specs:
@@ -61,7 +55,6 @@ DEPENDENCIES
   attr_hasher!
   rake
   rspec
-  rspec_sonar_formatter!
   rubocop-performance
   rubocop-rspec
   simplecov
