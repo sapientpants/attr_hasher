@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
   s.files      = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.required_ruby_version = '>= 2.6.0'
+  s.required_ruby_version = '>= 2.0.0'
 
   s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME =~ /gem\z/
 end
