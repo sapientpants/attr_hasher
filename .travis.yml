@@ -12,7 +12,7 @@ before_install: gem install bundler -v 2.0.1
 
 addons:
   sonarcloud:
-    organization: "sapientpants"
+    organization: "sapientpants-github"
 
 script:
   - sonar-scanner
