@@ -6,12 +6,16 @@ module AttrHasher
   module Hashers
     # Base class for Hasher implementations
     class Base
+      def initialize(options = {})
+        @options = options
+      end
+
       def hash(algorithm, value, options = {})
-        salter = options[:salter]
-        if salter.nil?
+        preprocessor = options[:preprocessor]
+        if preprocessor.nil?
           algorithm.hexdigest(value)
         else
-          algorithm.hexdigest(salter.call(value))
+          algorithm.hexdigest(preprocessor.call(value))
         end
       end
     end

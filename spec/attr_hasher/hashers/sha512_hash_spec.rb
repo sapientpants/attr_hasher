@@ -4,9 +4,9 @@ require 'attr_hasher/hashers/sha512'
 require_relative '../../spec_helper'
 
 RSpec.describe AttrHasher::Hashers::Sha512, '#hash' do
-  let(:salter) { ->(plain) { "ABC#{plain}XYZ" } }
+  let(:preprocessor) { ->(plain) { "ABC#{plain}XYZ" } }
 
-  context 'without salt' do
+  context 'without preprocessor' do
     let(:hasher) { AttrHasher::Hashers::Sha512.new }
 
     it 'creates expected hashes' do
@@ -17,8 +17,8 @@ RSpec.describe AttrHasher::Hashers::Sha512, '#hash' do
     end
   end
 
-  context 'with salt' do
-    let(:hasher) { AttrHasher::Hashers::Sha512.new(salter: salter) }
+  context 'with preprocessor' do
+    let(:hasher) { AttrHasher::Hashers::Sha512.new(preprocessor: preprocessor) }
 
     it 'creates expected hashes' do
       expected = '10322d61b78b573aa5f82ef7f5dd0c075a248d7b8eea67bbe22b756a6ee' \
