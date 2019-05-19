@@ -19,6 +19,6 @@ script:
   - bundle exec rake
   - echo $PATH
   - pwd
-  - find / -name rubocop
+  - find /home/travis -name rubocop
   - bundle exec rubocop --format json --out rubocop-report.json
   - sonar-scanner
