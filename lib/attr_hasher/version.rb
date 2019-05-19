@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module AttrHasher
+  # This is the version
   module Version
     MAJOR = 0
     MINOR = 1

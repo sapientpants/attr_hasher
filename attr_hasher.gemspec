@@ -19,7 +19,9 @@ Gem::Specification.new do |s|
   s.homepage = 'http://github.com/sapientpants/attr_hasher'
   s.license = 'MIT'
 
-  s.rdoc_options = ['--line-numbers', '--inline-source', '--main', 'README.rdoc']
+  s.rdoc_options = [
+    '--line-numbers', '--inline-source', '--main', 'README.rdoc'
+  ]
 
   s.require_paths = ['lib']
 
@@ -35,5 +37,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop-rspec', '~> 1.33'
   s.add_development_dependency 'simplecov', '~> 0.16'
 
-  s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME =~ /gem\z/
+  if $PROGRAM_NAME.end_with?('gem')
+    s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem')
+  end
 end
