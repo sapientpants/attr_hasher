@@ -20,5 +20,5 @@ script:
   - echo $PATH
   - pwd
   - find ./vendor/bundle -print | grep 'bin/rubocop'
-  - bundle exec rubocop --format json --out rubocop-report.json
+  - ./vendor/bundle/ruby/2.6.0/bin/rubocop --format json --out rubocop-report.json
   - sonar-scanner
