@@ -8,8 +8,12 @@ module AttrHasher
     class Sha512 < Base
       ALGORITHM = Digest::SHA512
 
+      def initialize(options = {})
+        @options = options
+      end
+
       def hash(value)
-        super(ALGORITHM, value)
+        super(ALGORITHM, value, @options)
       end
     end
   end
