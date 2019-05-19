@@ -13,5 +13,5 @@ module AttrHasher
     end
   end
 
-  def attr_hasher(*attributes); end
+  # def attr_hasher(*attributes); end
 end
