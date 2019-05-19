@@ -17,6 +17,7 @@ addons:
 
 script:
   - bundle exec rake
+  - echo $PATH
   - pwd
   - find / -name rubocop
   - bundle exec rubocop --format json --out rubocop-report.json
