@@ -19,7 +19,7 @@
 if ENV['COVERAGE'] == 'true'
   require 'simplecov'
   SimpleCov.start do
-    # add_filter %r{^/spec/}
+    add_filter %r{^/spec/}
   end
 end
 
