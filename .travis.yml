@@ -17,5 +17,7 @@ addons:
 
 script:
   - bundle exec rake
+  - pwd
+  - find / -name rubocop
   - bundle exec rubocop --format json --out rubocop-report.json
   - sonar-scanner
