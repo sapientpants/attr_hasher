@@ -16,9 +16,9 @@ addons:
     organization: "sapientpants-github"
 
 script:
-  - bundle exec rake
-  - echo $PATH
+  - env | sort
   - pwd
   - find ./vendor/bundle -print | grep 'bin/rubocop'
-  - ./vendor/bundle/ruby/2.6.0/bin/rubocop --format json --out rubocop-report.json
+  - bundle exec rake
+  - bundle exec rubocop --format json --out rubocop-report.json
   - sonar-scanner
