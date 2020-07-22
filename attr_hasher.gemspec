@@ -30,7 +30,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.3.0'
 
-  s.add_development_dependency 'rake', '~> 12.3'
+  s.add_development_dependency 'guard', '~> 2.15'
+  s.add_development_dependency 'guard-rspec', '~> 4.7'
+  s.add_development_dependency 'rake', '>= 12.3.3'
   s.add_development_dependency 'rspec', '~> 3.8'
   s.add_development_dependency 'rubocop', '~> 0.69'
   s.add_development_dependency 'rubocop-performance', '~> 1.3'

@@ -1,3 +1,4 @@
+branches: trunk
 sudo: false
 language: ruby
 cache:
