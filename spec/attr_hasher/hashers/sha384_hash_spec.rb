@@ -7,7 +7,7 @@ RSpec.describe AttrHasher::Hashers::Sha384, '#hash' do
   let(:preprocessor) { ->(plain) { "ABC#{plain}XYZ" } }
 
   context 'without preprocessor' do
-    let(:hasher) { AttrHasher::Hashers::Sha384.new }
+    let(:hasher) { described_class.new }
 
     it 'creates expected hashes' do
       expected = 'bfd76c0ebbd006fee583410547c1887b0292be76d582d96c242d2a79272' \
@@ -17,7 +17,7 @@ RSpec.describe AttrHasher::Hashers::Sha384, '#hash' do
   end
 
   context 'with preprocessor' do
-    let(:hasher) { AttrHasher::Hashers::Sha384.new(preprocessor: preprocessor) }
+    let(:hasher) { described_class.new(preprocessor: preprocessor) }
 
     it 'creates expected hashes' do
       expected = '34b4c1ed167435f983e8c1ed84924e579b39d7ec43ebe4d1ef92a13bdae' \

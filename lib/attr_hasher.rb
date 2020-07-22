@@ -9,6 +9,7 @@ module AttrHasher
     base.class_eval do
       include InstanceMethods
       attr_writer :attr_hasher_options
+
       @attr_hasher_options = {}
     end
   end
