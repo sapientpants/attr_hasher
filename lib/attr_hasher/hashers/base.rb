@@ -12,11 +12,19 @@ module AttrHasher
 
       def hash(algorithm, value, options = {})
         preprocessor = options[:preprocessor]
-        if preprocessor.nil?
-          algorithm.hexdigest(value)
-        else
-          algorithm.hexdigest(preprocessor.call(value))
-        end
+        plain_value = if preprocessor.nil?
+                        value
+                      elsif preprocessor.is_a?(Proc)
+                        preprocessor.call(value)
+                      end
+
+        algorithm.hexdigest(plain_value)
+      end
+
+      protected
+
+      def instance_method?(name)
+        methods.any? { |im| im.to_sym == name.to_sym }
       end
     end
   end

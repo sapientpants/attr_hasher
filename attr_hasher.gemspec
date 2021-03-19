@@ -9,7 +9,6 @@ require 'date'
 Gem::Specification.new do |s|
   s.name    = 'attr_hasher'
   s.version = AttrHasher::Version.string
-  s.date    = Date.today
 
   s.summary     = 'Hash attributes'
   s.description = 'Generates attr_accessors that hash attributes transparently'
@@ -28,16 +27,20 @@ Gem::Specification.new do |s|
   s.files      = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- test/*`.split("\n")
 
-  s.required_ruby_version = '>= 2.7.0'
+  s.required_ruby_version = '>= 2.6.0'
 
-  s.add_development_dependency 'guard', '~> 2.16'
-  s.add_development_dependency 'guard-rspec', '~> 4.7'
-  s.add_development_dependency 'rake', '>= 13'
-  s.add_development_dependency 'rspec', '~> 3.9'
-  s.add_development_dependency 'rubocop', '~> 0.88'
-  s.add_development_dependency 'rubocop-performance', '~> 1.7'
-  s.add_development_dependency 'rubocop-rspec', '~> 1.42'
-  s.add_development_dependency 'simplecov', '~> 0.18'
+  s.add_development_dependency 'bundler',             '~> 2.2.3'
+  s.add_development_dependency 'bundler-audit',       '~> 0.8.0'
+  s.add_development_dependency 'guard',               '~> 2.16'
+  s.add_development_dependency 'guard-rspec',         '~> 4.7.3'
+  s.add_development_dependency 'guard-rubocop',       '~> 1.4.0'
+  s.add_development_dependency 'rake',                '>= 13'
+  s.add_development_dependency 'rspec',               '~> 3.10'
+  s.add_development_dependency 'rubocop',             '~> 1.11.0'
+  s.add_development_dependency 'rubocop-performance', '~> 1.10.1'
+  s.add_development_dependency 'rubocop-rake',        '~> 0.5.1'
+  s.add_development_dependency 'rubocop-rspec',       '~> 2.2.0'
+  s.add_development_dependency 'simplecov',           '~> 0.21.2'
 
   s.signing_key = File.expand_path('~/.ssh/gem-private_key.pem') if $PROGRAM_NAME.end_with?('gem')
 end

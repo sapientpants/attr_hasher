@@ -1,12 +1,11 @@
-# This is the configuration used to check the rubocop source code.
-
-require:
-  - rubocop-performance
-  - rubocop-rspec
-
 AllCops:
+  Exclude:
+    - Guardfile
   NewCops: enable
-  TargetRubyVersion: 2.7
+  TargetRubyVersion: 2.6
+  UseCache: false
 
-Layout/EndOfLine:
-  EnforcedStyle: lf
+Metrics/BlockLength:
+  Exclude:
+    - attr_hasher.gemspec
+    - spec/**/*.rb
